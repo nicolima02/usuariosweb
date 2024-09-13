@@ -1,5 +1,11 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+*{
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -13,13 +19,16 @@
   }
 }
 
+.content{
+  min-height: 88vh;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -27,6 +36,429 @@
 .App-link {
   color: #61dafb;
 }
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+li{
+  list-style-type: none;
+}
+
+.usuario{
+  display: flex;
+  align-items: center;
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  margin-top: 40px;
+  border-radius: 10px;
+  animation: fadeInUser 0.5s ease;
+}
+
+.input-password-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+
+.input-user-untouched{
+  border-color: #60656d;
+}
+
+#input-user-untouched{
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.siguiente-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.siguiente-button button{
+  background-color: #4787f0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.input-user-touched{
+  border-color: #4787f0;
+}
+
+#input-user{
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  outline: none; 
+  margin: 20px;
+}
+
+#input-password{
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  outline: none; 
+  margin: 20px;
+}
+
+
+.input-container{
+  display: flex;
+  align-items: center;
+}
+
+.label-untouched{
+  color: black;
+  position: absolute;
+  margin-left: 32px;
+  font-size: 15px;
+  transition: 0.5;
+}
+
+.label-touched{
+  color: #4787f0;
+  background-color: #282c34;
+  position: absolute;
+  margin-left: 32px;
+  font-size: 15px;
+  transform: translateY(-40px);
+  padding: 5px;
+  transition: color 0.3s, background-color 0.4s, transform 0.2s, padding 0.4s;
+}
+
+.usuario label:hover{
+  cursor:text;
+}
+
+.navBar{
+  overflow: hidden;
+  background-color: #4e5666;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navBar button{
+  background-color: #c74832;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.contraseña{
+  display: flex;
+  animation: fadeIn 0.5s ease;
+  transform: translateX(20px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUser {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.error{
+  color: rgb(218, 0, 0);
+  font-size:15px;
+  font-style: italic;
+  margin: 10px;
+}
+
+.errorPass{
+  color: rgb(218, 0, 0);
+  font-size:12px;
+  font-style: italic;
+  margin: 0;
+}
+
+.navBar ul{
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+.navBar ul li{
+  padding: 10px;
+  transition: 0.5s;
+}
+.navBar ul li:hover{
+  padding: 10px;
+  color: rgb(148, 148, 148);
+}
+
+#btn-cambiar-usuario{
+  background-color: rgb(40, 109, 40);
+}
+
+.user-navbar{
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  padding-right: 20px;
+  font-style: italic;
+  color: #5d9bff;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para el encabezado de la tabla */
+thead {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Estilo para las celdas del cuerpo de la tabla */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+td {
+  color: black;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para las filas al pasar el cursor */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.user-navbar-container{
+  display: flex;
+  align-items: center;
+
+}
+
+.register-container{
+  width: fit-content;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  outline-style: solid;
+  outline-color:rgb(52, 145, 52);
+  border-radius: 30px;
+  outline-width: 1px;
+  animation: fadeInUser 0.5s ease;
+}
+
+.register-user-container{
+  display: flex;
+  padding: 20px;
+  margin:0 20px 0 20px;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.divisor{
+  height: 1px;
+  width: 100px;
+  background-color: rgb(69, 76, 90);
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.register-password-container{
+  display: flex;
+  padding: 20px;
+  margin: 0 20px 0 20px;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.input-register{
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  outline: none; 
+  margin: 20px;
+}
+
+
+.label-register{
+  font-size: 20px;
+}
+
+.btn-registrar-submit{
+  background-color: rgb(37, 109, 37);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.paginador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cambioPaginador{
+  background-color: #4787f0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.btn-consultar{
+  background-color: #4787f0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.filtro-container{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.filtro-container label{
+  width: 200px;
+  text-align: start;
+}
+
+.filtro-container input{
+  padding: 10px;
+  width:300px;
+  border-radius: 10px;
+  border: none;
+  outline: none; 
+}
+
+.filtros-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.filtro-container select{
+  padding: 10px;
+  width: 320px;
+  border-radius: 10px;
+  border: none;
+  outline: none; 
+}
+
+.btn-consultar i{
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.invisible{
+  background-color: #4787f0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.footer{
+  
+  background-color: #4e5666;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer a{
+  margin-left: 10px;
+  margin-bottom:3px;
+  transition: 0.2s;
+  margin-bottom: 1px;
+}
+
+.spanna{
+  width: 0%;
+  border-bottom: 1px solid transparent;
+  transition: width 0.2s,border-bottom 0.5s;
+}
+
+.footer div:hover .spanna{
+  width: 100%;
+  border-bottom:1px solid white;
+  transition: width 1s,border-bottom 0.8s;
+}
+
+/* .footer div:hover .underline{
+  width: 20px;
+  border-bottom: 1px solid white;
+} */
 
 @keyframes App-logo-spin {
   from {

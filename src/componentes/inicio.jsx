@@ -1,12 +1,35 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const Inicio = ()=>{
-    return(
+const Inicio = () => {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/users/check-session", {
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log(response.data.user);
+        setUser(response.data?.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <div>
+      {user ? (
         <div>
-            <Link to="/users"><button>Login</button></Link>
-            <Link to="/check"><button>Check sesión</button></Link>
+          <h1>
+            Bienvenido <strong>{user}</strong>
+          </h1>
         </div>
-    )
+      ) : (
+        <h1>Inicio</h1>
+      )}
+    </div>
+  );
 };
 
 export default Inicio;
